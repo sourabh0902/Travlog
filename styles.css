@@ -1,0 +1,4359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    cursor: url(cursor.png), auto !important;
+}
+
+::selection {
+  background-color: transparent; /* Background color when selected */
+  color:#facd49; /* Text color when selected */
+}
+
+body::-webkit-scrollbar {
+  width: 0.3vw; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(145deg, #E85DA3, #6350C4);
+  border-radius: 6px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.ellipse-23 {
+    background: #ff5722;
+    border-radius: 50%;
+    opacity: 0.5;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    filter: blur(250px);
+    top: -37%;
+    left: -40%;
+  }
+
+nav {
+  width: 100%;
+  height: 6.25vw;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 2vw 10.31vw;
+  top: 0;
+  z-index: 9;
+  background: linear-gradient(to right, rgba(255, 228, 219, 0.895), rgba(255, 255, 255, 1 ));
+  transition: all 0.5s ease;
+}
+
+nav:hover {
+  height: 15vh;
+  margin-top: -3vh; /* Negative margin equal to the expanded height */
+  transform: translateY(3vh);
+  scale: 1.1;
+}
+
+nav i {
+    display: none;
+    font-size: 1.4vw;
+    font-weight: 800;
+    color: black;
+}
+
+.nav-part1 {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+} 
+
+.nav-part1 h2 {
+    color: var(--black, #191825);
+    text-align: left;
+    font: 900 1.5vw/2.5vw "Nunito Sans", sans-serif;
+}
+
+.nav-part1 svg {
+    width: 3vw; /* Adjust as needed */
+    max-width: 100%; /* Optional: Limit maximum width */
+}
+
+.nav-part2 {
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;  
+}
+
+/* .nav-part2 h2 span{
+    color: #222831;
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+}  */
+
+.nav-part2 h2 {
+    color: rgba(25, 24, 37, 0.5);
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding: 0.4vw;
+}
+
+.nav-part2 h2:hover {
+  color: #111;
+  transform: scale(1.4);
+  text-shadow: none;
+  /* text-transform: uppercase; */
+}
+
+.nav-part3 {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.nav-part3 #button1 {
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    /* position: relative; */
+    color: #222831;
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+    border: none;
+}
+
+
+.nav-part3 #button2 {
+    background: #5d50c6;
+    border-radius: 100px;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    /* position: relative; */
+    color: #eeeeee;
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+}
+
+.dropdown-items {
+    display: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 9.25vw;
+    margin-left: 4.3vw;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 2.6vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    /* width: 427px; */
+    position: relative;
+    left: 7vw;
+}
+
+.explore {
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.07),
+      0px 34px 75px 0px rgba(0, 0, 0, 0.07),
+      0px 137px 137px 0px rgba(0, 0, 0, 0.06),
+      0px 308px 185px 0px rgba(0, 0, 0, 0.04),
+      0px 548px 219px 0px rgba(0, 0, 0, 0.01),
+      0px 856px 240px 0px rgba(0, 0, 0, 0);  }
+
+  .explore-the-world {
+    color: #f85e9f;
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+  }
+
+  .explore .work-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+     width: 1.5vw;
+    height: 1.5vw;
+  }
+
+  .travel-top-destination-of-the-world {
+    text-align: left;
+    font: 700 4.3vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    width: 597px;
+    width: 70%;
+  }
+  .travel-top-destination-of-the-world-span {
+    color: #000000;
+    font: 700 4.3vw/120% "Nunito Sans", sans-serif;
+  }
+  .travel-top-destination-of-the-world-span2 {
+    color: #f85e9f;
+    font: 700 4.3vw/120% "Nunito Sans", sans-serif;
+  }
+  .travel-top-destination-of-the-world-span3 {
+    color: #000000;
+    font: 700 4.3vw/120% "Nunito Sans", sans-serif;
+  }
+    
+  .we-always-make-our-customer-happy-by-providing-as-many-choices-as-possible {
+    color: rgba(25, 24, 37, 0.5);
+    text-align: left;
+    font: 400 1.2vw/160% "Inter", sans-serif;
+    position: relative;
+  }
+
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .buttons #button1 {
+        background-color: #5d50c6;
+        border-radius: 100px;
+        padding: 1vw 2vw;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5vw;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        position: relative;
+        /* box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+          0px 5px 11px 0px rgba(0, 0, 0, 0.1), 0px 20px 20px 0px rgba(0, 0, 0, 0.09),
+          0px 45px 27px 0px rgba(0, 0, 0, 0.05), 0px 81px 32px 0px rgba(0, 0, 0, 0.01),
+          0px 126px 35px 0px rgba(0, 0, 0, 0); */
+          border: none;
+          transition: all 0.1s linear;
+          box-shadow: 0 0.31vw 0 #4e4690;
+          cursor: pointer;
+  }
+
+  .buttons #button1:active {
+    box-shadow: 0 0.12vw 0 #4e4690;
+    transform: translateY(0.18vw);
+  }
+
+  .get-started {
+    color: #eeeeee;
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    /* padding: 1vw; */
+  }
+
+
+  #button2 {
+    background: #ffffff;
+    border-radius: 100px;
+    border-style: solid;
+    border-color: #eeeeee;
+    border-width: 1px;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  #button2:hover {
+    scale: 0.9;
+  }
+
+  .play-circle-5-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 2vw;
+    height: 2vw;
+  }
+  .watch-demo {
+    color: #222831;
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+  }
+  
+
+  .group-1 {
+    flex-shrink: 0;
+    width: 100%; /* Adjust as needed */
+    max-width: 48.24vw; /* Set a maximum width if necessary */
+    position: relative;
+    margin: 0 auto; /* Center the content */
+  }
+
+
+  .layer {
+    width: 100%;
+    height: 4vw;
+    position: relative;
+    overflow: visible;
+    transition: all 0.3s ease;
+  }
+
+
+  .layer img {
+    position: absolute;
+    width: 43vw;
+  }
+
+
+  .frame-15 {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 1vw;
+  }
+  .frame-14 {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .rectangle-1 {
+    background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+    border-radius: 2vw;
+    flex-shrink: 0;
+    width: 17vw;
+    height: 18.75vw;
+    position: relative;
+  }
+  .rectangle-2 {
+    background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+    border-radius: 1vw;
+    flex-shrink: 0;
+    width: 17vw;
+    height: 17.75vw;
+    position: relative;
+  }
+  .rectangle-3 {
+    background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+    border-radius: 1vw;
+    flex-shrink: 0;
+    width: 17vw;
+    height: 25vw;
+    position: relative;
+  }
+
+  .rectangle-1 {
+    transform-style: preserve-3d;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .rectangle-1:hover {
+    transform: rotateY(180deg);
+    scale: 1.1;
+  }
+
+  .rectangle-2 {
+    transform-style: preserve-3d;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .rectangle-2:hover {
+    transform: rotateY(180deg);
+    scale: 1.1;
+  }
+
+  .rectangle-3{
+    transform-style: preserve-3d;
+    transition: all 0.6s ease-in-out;
+    /* width: 100%; */
+  }
+
+  .rectangle-3:hover {
+    transform: rotateY(180deg);
+    scale: 1.1;
+  }
+
+  .frame-16 {
+    background: #f85e9f;
+    border-radius: 100px;
+    padding: 1.3vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 3.180000000000007vw;
+    top: 17.310000000000002vw;
+    box-shadow: 0px 19px 19px 0px rgba(0, 0, 0, 0.09), 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+    overflow: hidden;
+  }
+  .send-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 2.5vw;
+    height: 2.5vw;
+    transition: all 1.5s;
+    transition-timing: ease-in-out;
+  }
+
+  .frame-16:hover .send-1 {
+    transform: rotate(720deg);
+  }
+
+  .frame-17 {
+    background: #ff5722;
+    border-radius: 100px;
+    padding: 1vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    left: 30.310000000000002vw;
+    top: 37.56vw;
+    box-shadow: 0px 19px 19px 0px rgba(0, 0, 0, 0.09), 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+    overflow: hidden;
+  }
+  .add-user-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 2.5vw;
+    height: 2.5vw;
+    transition: all 1.5s;
+    transition-timing: ease-in-out;
+  }
+
+  .frame-17:hover .add-user-1 {
+    transform: rotate(720deg);
+  }
+
+  .frame-18 {
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 34.68000000000001vw;
+    top: 30.5vw;
+    box-shadow: 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+    overflow: hidden;
+  }
+
+  .location-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 2.5vw;
+    height: 2.5vw;
+    transition: all 1.5s;
+    transition-timing: ease-in-out;
+  }
+
+  .frame-18:hover .location-1 {
+    transform: rotate(720deg);
+  }
+
+  .top-places {
+    color: #393e46;
+    text-align: left;
+    font: 700 1vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+  }
+
+  .objects {
+    display: flex;
+    left: 6vw;
+    position: absolute;
+  }
+
+  .objects img {
+    width: 3vw;
+    height: 8vw;
+    margin-top: 2vw;
+  }
+
+
+
+  .logo-group {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* margin-top: 1.25vw; */
+    position: relative;
+    width: 100%;
+    /* height: 20vh; */
+    /* background-color: red; */
+    padding: 5.31vw 0vw;
+  }
+  
+  .logo {
+    flex-shrink: 2;
+    width: 6.25vw;
+    height: 6.25vw;
+    /* margin: 0 10px; */
+    overflow: visible;
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover{
+    scale: 1.5;
+  }
+
+  .logo img{
+    width: 9.25vw;
+    height: 6.25vw;
+    object-fit: contain;
+  }
+
+  /* .expedia img {
+    width: 100px;
+    height: 100px;
+  } */
+
+.booking img {
+    width: 100px;
+    height: 100px;
+}
+
+.airbnb img {
+    width: 100px;
+    height: 100px;
+}
+
+.orbitz img {
+    width: 100px;
+    height: 100px;
+}
+
+/*Carousel starts here*/  
+
+.frame-27 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin-left: 15vw;
+  margin-bottom: 5.5vw;
+}
+.frame-22 {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 27.25vw;
+  position: relative;
+}
+.services {
+  color: #f85e9f;
+  text-align: left;
+  font: 700 1.43vw/120% "Nunito Sans", sans-serif;
+  text-transform: uppercase;
+  position: relative;
+}
+.our-top-value-categories-for-you {
+  color: #191825;
+  text-align: left;
+  font: 700 2.75vw/120% "Nunito Sans", sans-serif;
+  position: relative;
+  align-self: stretch;
+}
+
+
+.gallery {
+  padding: 1rem 3rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 22vw);
+  grid-template-rows: 1fr;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  overflow: hidden;
+  /* height: 90vh; */
+  scroll-snap-type: both mandatory;
+  scroll-padding: 1rem;
+  flex-direction: row;
+  gap: 3.2vw;
+  cursor: grab;
+  margin: 3vw 0vw;
+}
+
+.gallery:active {
+  cursor: grabbing;
+}
+
+
+/* .first {
+  background: #ffffff;
+  border-radius: 2vw;
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 21.86vw;
+  position: relative;
+} */
+
+.frame-23 {
+  background: #ffffff;
+  border-radius: 2vw;
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+  justify-content: flex-start;
+  /* align-self: stretch; */
+  flex-shrink: 0;
+  width: 21.86vw;
+  position: relative;
+}
+
+.destination-1 {
+  flex-shrink: 0;
+  width: 4vw;
+  height: 4vw;
+  position: relative;
+}
+.frame-24 {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.best-tour-guide {
+  color: #191825;
+  text-align: center;
+  font: 700 1.75vw/120% "Nunito Sans", sans-serif;
+  position: relative;
+  align-self: stretch;
+}
+.what-looked-like-a-small-patch-of-purple-grass-above-five-feet {
+  color: rgba(25, 24, 37, 0.5);
+  text-align: center;
+  font: 400 1.12vw/160% "Inter", sans-serif;
+  position: relative;
+  align-self: stretch;
+}
+
+/* .second {
+  background: #ffffff;
+  border-radius: 2vw;
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 21.86vw;
+  position: relative;
+} */
+
+.frame-242 {
+  background: #ffffff;
+  border-radius: 2vw;
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 21.88vw;
+  position: relative;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+    0px 41px 89px 0px rgba(0, 0, 0, 0.1);
+}
+.booking-1 {
+  flex-shrink: 0;
+  width: 4vw;
+  height: 4vw;
+  position: relative;
+}
+.easy-booking {
+  color: #191825;
+  text-align: center;
+  font: 700 1.8vw/120% "Nunito Sans", sans-serif;
+  position: relative;
+  align-self: stretch;
+}
+.square-was-moving-across-the-sand-in-their-direction {
+  color: rgba(25, 24, 37, 0.5);
+  text-align: center;
+  font: 400 1.12vw/160% "Inter", sans-serif;
+  position: relative;
+  align-self: stretch;
+}
+
+/* .third {
+  background: #ffffff;
+  border-radius: 2vw;
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 21.86vw;
+  position: relative;
+} */
+
+.frame-25 {
+  background: #ffffff;
+  border-radius: 2vw;
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 21.88vw;
+  position: relative;
+  overflow: hidden;
+}
+.cloudy-1 {
+  flex-shrink: 0;
+  width: 4vw;
+  height: 4vw;
+  position: relative;
+}
+.weather-forecast {
+  color: #191825;
+  text-align: center;
+  font: 700 1.8vw/120% "Nunito Sans", sans-serif;
+  position: relative;
+  align-self: stretch;
+}
+  
+.frame-23,.frame-242,.frame-25 {
+  scroll-snap-align: center;
+}
+
+.active {
+scroll-snap-type: unset;
+}
+/*Carousel Ends here*/
+
+
+
+  
+.ellipse-24 {
+    background: #facd49;
+    border-radius: 50%;
+    /* opacity: 0.5; */
+    width: 15.6vw;
+    height: 15.6vw;
+    position: absolute;
+    left: 82%;
+    filter: blur(250px);
+    overflow: hidden;
+    z-index: -1;
+  }
+      
+
+
+/*
+.part1 {
+    display: flex;
+    flex-shrink: 0;
+    width: 49.3vw;
+    height: 43.56vw;
+    position: absolute;
+    background-color: blue;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rectangle {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: #facd49;
+    border-radius: 0px 500px 500px 0px;
+    width: 44.1vw;
+    height: 34.3vw;
+    position: absolute;
+    
+}
+
+/* .suitcase{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .suitcase img {
+    object-fit: cover;
+    position: absolute;
+    width: 43.56vw;
+    height: 43.56vw;
+    top: -3.2vw;
+    left: 6vw; */
+} */
+
+/* .part2 {
+    display: flex;
+    flex-shrink: 0;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: yellow;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+}
+
+.above {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: absolute;
+    width: 70%;
+}
+
+.above-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: absolute;
+    background-color: white;
+}
+
+.contrary-to-popular-belief-lorem-ipsum-is-not-simply-random-text-it-has-roots-in-a-piece-of-classical-latin-literature-from-45-bc {
+    color: rgba(25, 24, 37, 0.5);
+    text-align: left;
+    font: 400 18px/160% "Inter", sans-serif;
+    position: relative;
+    align-self: stretch;
+  } */
+
+
+  .frame {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 0px !important;
+  }
+  
+    .frame .group {
+    display: flex;
+    position: relative;
+    width: 49.38vw;
+    height: 43.56vw;
+  }
+  
+  .frame .overlap-group {
+    position: relative;
+    width: 49.37vw;
+    height: 43.56vw;
+  }
+  
+  .frame .rectangle {
+    position: absolute;
+    width: 44.06vw;
+    height: 34.37vw;
+    top: 8.06vw;
+    left: 0;
+    background-color: #facd49;
+    border-radius: 0px 31.25vw 31.25vw 0px;
+  }
+  
+  .frame .my-project {
+    position: absolute;
+    width: 43.56vw;
+    height: 43.56vw;
+    top: 0;
+    left: 5.81vw;
+    object-fit: cover;
+  }
+  
+
+  .ticket {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 1.2vw;
+    position: relative;
+    background-color: #facd49;
+    border-radius: 100px;
+    top: -66vw;
+    left: 85vw;
+  }
+
+  .ticket-star {
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .ticket-star .vector {
+    position: relative;
+    width: 2.5vw;
+    height: 2.23vw;
+    top: 0.3vw;
+    left: 0.25vw;
+  }
+  
+  .ticket-discount {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 6.25vw;
+    bottom: 77vw;
+    left: 25vw;
+    transition: all 0.3s ease;
+  }
+
+  .ticket-discount:hover {
+    scale: 1.1;
+  }
+
+  .frame .discount {
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .frame .wrapper {
+    position: relative;
+    width: fit-content;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.43vw;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .frame .div-2 {
+    display: flex;
+    width: 27.81vw;
+    gap: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 61vw;
+    top: -42vw;
+  }
+  
+  .frame .div-3 {
+    gap: 2vw;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .frame .div-4 {
+    gap: 1vw;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .frame .travel-point {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #f85e9f;
+    font-size: 1.43vw;
+    letter-spacing: 4.6px;
+    line-height: 1.7vw;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 2.75vw;
+    letter-spacing: 0;
+    line-height: 3.3vw;
+  }
+  
+  .frame .p {
+    position: relative;
+    align-self: stretch;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #19182580;
+    font-size: 1.12vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+  }
+  
+  .frame .div-5 {
+    align-items: flex-start;
+    gap: 2vw;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+  }
+  
+  .frame .div-6 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    padding: 2vw;
+    flex: 1;
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 2vw;
+    border: 1px solid;
+    border-color: #1918251a;
+    display: flex;
+    position: relative;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #ff5722;
+    font-size: 2.18vw;
+    letter-spacing: 0;
+    line-height: 2.6vw;
+    white-space: nowrap;
+  }
+  
+  .frame .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825;
+    font-size: 1.12vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+  
+  .frame .text-wrapper-4 {
+    position: relative;
+    width: fit-content;
+    margin-left: -0.75px;
+    margin-right: -0.75px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825;
+    font-size: 1.12vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+  
+
+  .graphic_element {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 12vh;
+    width: 12vw;
+    /* background-color: black; */
+    bottom: 38vw;
+    left: 8vw;
+  }
+
+  .graphic_element img {
+    width: 13vw;
+    height: 13vw;
+    /* object-fit: cover; */
+    position: absolute;
+  }
+  
+
+  .frame2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 79.3vw;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    padding: 8vw 4vw;
+    position: relative;
+    background-color: #facd4914;
+    border-radius: 2vw;
+    /* background-color: red; */
+    top: -44vw;
+    left: 11vw;
+  }
+  
+  .frame2 .div {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame2 .subscribe-to-our {
+    position: relative;
+    width: 61.3vw;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #f85e9f;
+    font-size: 1.4vw;
+    text-align: center;
+    letter-spacing: 0.28vw;
+    line-height: 1.7vw;
+  }
+  
+  .frame2 .prepare-yourself-let {
+    position: relative;
+    width: 61.3vw;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 3.43vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 4.12vw;
+  }
+  
+  .frame2 .div-2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 4vw;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .frame2 .div-3 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 1vw;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 4vw;
+  }
+  
+  .frame2 .message {
+    position: relative;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  
+  .frame2 .text-wrapper {
+    position: relative;
+    width: fit-content;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825bf;
+    font-size: 1.43vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .frame2 input {
+    width: 100%;
+    border: transparent;
+    padding: inherit;
+    /* height: 3rem; */
+    font-size: 1.5vw;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825f0;
+  }
+
+  .frame2 input:focus {
+    border: transparent;
+    outline: none;
+  }
+  
+  .frame2 .div-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 2vw 4vw;
+    position: relative;
+    /* align-self: stretch; */
+    flex: 0 0 auto;
+    background-color: #5d50c6;
+    border-radius: 2vw;
+    transition: all 0.1s ease;
+    box-shadow: 0 5px 0 #4e4690;
+    cursor: pointer;
+  }
+
+  .frame2 .div-wrapper:active {
+    box-shadow: 0 2px 0 #4e4690;
+    transform: translateY(3px);
+  }
+  
+  .frame2 .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.43vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+  
+
+  /*Footer*/
+  footer {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 9.56vw;
+    padding: 5vw 10.31vw;
+    position: relative;
+    /* background-color: red !important; */
+    top: -39vw; 
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4vw;
+    position: relative;
+  }
+
+  .footer-left-upper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    position: relative;
+  }
+
+  .footer-logo svg {
+    position: relative;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  
+  .footer-logo .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Black", Helvetica;
+    font-weight: 900;
+    color: var(--black);
+    font-size: 1.8vw;
+    letter-spacing: 0;
+    line-height: 2.5vw;
+    white-space: nowrap;
+  }
+
+  .footer-left-text {
+    width: 17.3vw;
+    height: 16.18vw;
+  }
+
+  .footer-left-text .contrary-to-popular {
+    position: relative;
+    width: 17.38vw;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Black", Helvetica;
+    font-weight: 900;
+    color: #19182580;
+    font-size: 1.43vw;
+    letter-spacing: 0;
+    line-height: 2.3vw;
+  }
+
+  .footer-left-lower {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .footer-left-lower .group {
+    position: relative;
+    width: 2vw;
+    height: 2vw;
+  }
+
+  .footer-right {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 12.5vw;
+    position: relative;
+  }
+
+  .footer-right-part1 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .label {
+    width: 6.31vw;
+    height: 1.8vw;
+  }
+  
+  .label .company {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.43vw;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .label .about {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.1vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .career {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.1vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .mobile {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.1vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .footer-right-part2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .label .contact {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.43vw;
+    letter-spacing: 0;
+    line-height: 1.73vw;
+    white-space: nowrap;
+  }
+
+  .label .why-travel {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.12vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .partner {    
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #191825bf;
+  font-size: 1.12vw;
+  letter-spacing: 0;
+  line-height: 1.8vw;
+  white-space: nowrap;
+  }
+
+  .label .faqs {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.12vw;
+    letter-spacing: 0;
+    line-height: 1.43vw;
+    white-space: nowrap;
+  }
+
+  .label .blog {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.12vw;
+    letter-spacing: 0;
+    line-height: 1.43vw;
+    white-space: nowrap;
+  }
+
+  .footer-right-part3 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .label .meet-us {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.43vw;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .label .phone {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.1vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .email {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.1vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .address .label {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5vw;
+    position: relative;
+  }
+
+  .label .address1{
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.1vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .address2{
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.1vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+/*Footer ends here*/
+
+
+/*  MEDIA QUERIES */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+        nav {
+            /* background-color: lightseagreen; */
+            color: white;
+            height: 10vw;
+            border-bottom: none;
+            justify-content: space-between;
+            /* gap: -100vw; */
+            transition: none;
+        }
+
+        nav:hover {
+          height: initial;
+          margin-top: initial;
+          transform: none;
+          scale: none;
+        }
+
+        .nav-part1 svg {
+          width: 4vw;
+          max-width: 100%;
+        }
+
+        .nav-part1 h2 {
+            font-size: 3vw;
+        }
+
+        nav i {
+            display: block;
+            font-size: 3vw;
+        }
+
+        .nav-part2 {
+            display: none;
+        }
+
+        .nav-part3 {
+            display: none;
+        }
+
+        .dropdown-items {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            /* border: 1px solid #ccc; */
+          }
+        
+          .dropdown-items.show-dropdown {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;   
+            padding: 2vw;   
+            background: linear-gradient(to right, rgba(255, 228, 219, 0.895), rgba(255, 255, 255, 1 ));   
+          }
+
+        
+          .dropdown-items h2 {
+            color: rgba(25, 24, 37, 0.5);
+            text-align: left;
+            font: 700 2vw/120% "Nunito Sans", sans-serif;
+            transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+            padding: 0.4vw;
+            cursor: pointer;
+          }      
+
+          .dropdown-items #button1 {
+            background: #ffffff;
+            border-radius: 100px;
+            padding: 1vw 2vw;
+            display: flex;
+            flex-direction: row;
+            color: #222831;
+            text-align: left;
+            font: 700 2vw/120% "Nunito Sans", sans-serif;
+            border: none;
+          }
+
+          .dropdown-items #button2{
+            background: #5d50c6;
+            border-radius: 100px;
+            padding: 1vw 2vw;
+            display: flex;
+            flex-direction: row;
+            color: #eeeeee;
+            font: 700 2vw/120% "Nunito Sans", sans-serif;
+          }
+
+          .main {
+            display: flex;
+            flex-direction: row;
+            gap: 0px;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            margin-top: 15.25vw;
+            margin-left: 4.3vw;
+        } 
+
+          .explore {
+            background: #ffffff;
+            border-radius: 100px;
+            padding: 1vw 2vw;
+            display: flex;
+            flex-direction: row;
+            gap: 1vw;
+            align-items: center;
+            justify-content: flex-start;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.07),
+              0px 34px 75px 0px rgba(0, 0, 0, 0.07),
+              0px 137px 137px 0px rgba(0, 0, 0, 0.06),
+              0px 308px 185px 0px rgba(0, 0, 0, 0.04),
+              0px 548px 219px 0px rgba(0, 0, 0, 0.01),
+              0px 856px 240px 0px rgba(0, 0, 0, 0);  }
+        
+          .explore-the-world {
+            color: #f85e9f;
+            text-align: left;
+            font: 700 1.6vw/120% "Nunito Sans", sans-serif;
+            position: relative;
+          }
+                
+
+          .travel-top-destination-of-the-world {
+            text-align: left;
+            font: 700 6.3vw/100% "Nunito Sans", sans-serif;
+            position: relative;
+            width: 597px;
+            width: 60%;
+          }
+          .travel-top-destination-of-the-world-span {
+            color: #000000;
+            font: 700 5.3vw/120% "Nunito Sans", sans-serif;
+          }
+          .travel-top-destination-of-the-world-span2 {
+            color: #f85e9f;
+            font: 700 5.3vw/120% "Nunito Sans", sans-serif;
+          }
+          .travel-top-destination-of-the-world-span3 {
+            color: #000000;
+            font: 700 5.3vw/120% "Nunito Sans", sans-serif;
+          }
+            
+          .we-always-make-our-customer-happy-by-providing-as-many-choices-as-possible {
+            color: rgba(25, 24, 37, 0.5);
+            text-align: left;
+            font: 400 1.5vw/160% "Inter", sans-serif;
+            position: relative;
+          }
+        
+          .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 1vw;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-shrink: 0;
+            position: relative;
+          }
+        
+          .buttons #button1 {
+                background-color: #5d50c6;
+                border-radius: 100px;
+                padding: 1vw 2vw;
+                display: flex;
+                flex-direction: row;
+                gap: 0.5vw;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-shrink: 0;
+                position: relative;
+                /* box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+                  0px 5px 11px 0px rgba(0, 0, 0, 0.1), 0px 20px 20px 0px rgba(0, 0, 0, 0.09),
+                  0px 45px 27px 0px rgba(0, 0, 0, 0.05), 0px 81px 32px 0px rgba(0, 0, 0, 0.01),
+                  0px 126px 35px 0px rgba(0, 0, 0, 0); */
+                  border: none;
+          }
+        
+          .get-started {
+            color: #eeeeee;
+            text-align: left;
+            font: 700 1.5vw/120% "Nunito Sans", sans-serif;
+            position: relative;
+          }
+        
+        
+          #button2 {
+            background: #ffffff;
+            border-radius: 100px;
+            border-style: solid;
+            border-color: #eeeeee;
+            border-width: 1px;
+            padding: 1vw 2vw;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5vw;
+            align-items: center;
+            justify-content: flex-start;
+            flex-shrink: 0;
+            position: relative;
+          }
+        
+          .play-circle-5-1 {
+            /* font-size: 1.5vw; */
+            flex-shrink: 0;
+            position: relative;
+            overflow: visible;
+          }
+          .watch-demo {
+            color: #222831;
+            text-align: left;
+            font: 700 1.5vw/120% "Nunito Sans", sans-serif;
+            position: relative;
+          }
+
+          .left {
+            align-items: flex-start;
+            width: 40%;
+          }
+
+          .ellipse-23 {
+            background: #ff5722;
+            border-radius: 50%;
+            opacity: 0.5;
+            width: 50%;
+            height: 70%;
+            position: absolute;
+            filter: blur(250px);
+            top: -54%;
+            left: -15%;
+          }
+          .group-1 {
+            flex-shrink: 0;
+            width: 100%;
+            position: absolute;
+            margin: 0 auto;
+            right: 0;
+            width: 45vw;
+            }
+            
+          .layer {
+            width: 100%;
+            height: 4vw;
+            position: relative;
+            overflow: visible;
+            right: 9vw;
+          }
+        
+          .layer img {
+            position: absolute;
+            width: 43vw;
+          }      
+        
+          .frame-15 {
+            display: flex;
+            flex-direction: row;
+            gap: 1vw;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            right: 10vw;
+          }
+          .frame-14 {
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-shrink: 0;
+            position: relative;
+          }
+          .rectangle-1 {
+            background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+            border-radius: 2vw;
+            flex-shrink: 0;
+            width: 17vw;
+            height: 18.75vw;
+            position: relative;
+          }
+          .rectangle-2 {
+            background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+            border-radius: 1vw;
+            flex-shrink: 0;
+            width: 17vw;
+            height: 17.75vw;
+            position: relative;
+          }
+          .rectangle-3 {
+            background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+            border-radius: 1vw;
+            flex-shrink: 0;
+            width: 17vw;
+            height: 25vw;
+            position: relative;
+          }
+          .frame-16 {
+            background: #f85e9f;
+            border-radius: 100px;
+            padding: 0.5vw;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5vw;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: -6.82vw;
+            top: 18.31vw;
+            box-shadow: 0px 19px 19px 0px rgba(0, 0, 0, 0.09), 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+            overflow: hidden;
+          }
+          .send-1 {
+            flex-shrink: 0;
+            position: relative;
+            overflow: visible;
+
+          }
+          .frame-17 {
+            background: #ff5722;
+            border-radius: 100px;
+            padding: 1vw;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5vw;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 19.310000000000002vw;
+            top: 36.56vw;   
+            box-shadow: 0px 19px 19px 0px rgba(0, 0, 0, 0.09), 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+            overflow: hidden;
+          }
+          .add-user-1 {
+            flex-shrink: 0;
+            position: relative;
+            overflow: visible;
+          }
+          .frame-18 {
+            background: #ffffff;
+            border-radius: 100px;
+            padding: 1vw 2vw;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5vw;
+            align-items: center;
+            justify-content: flex-start;
+            position: absolute;
+            left: 27.680000000000007vw;
+            top: 30.5vw;
+            box-shadow: 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+            overflow: hidden;
+          }
+          .location-1 {
+            flex-shrink: 0;
+            position: relative;
+            overflow: visible;
+          }
+          .top-places {
+            color: #393e46;
+            text-align: left;
+            font: 700 1.3vw/120% "Nunito Sans", sans-serif;
+            position: relative;
+          }
+        
+          
+
+          .objects {
+            display: none;
+          }
+
+          .logo-group {
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 20vh;
+            /* background-color: red; */
+            padding: 0.31vw 2vw;
+            gap: 2vw;
+            margin-top: 6vw;
+            margin-bottom: 6vw;
+            align-content: center;
+            justify-items: center;
+          }
+          
+          .logo {
+            flex-shrink: 2;
+            width: 11.25vw;
+            height: 6.25vw;
+            /* margin: 0 10px; */
+            overflow: visible;
+          }
+        
+          .logo img{
+            width: 13.25vw;
+            height: 7.25vw;
+            object-fit: contain;
+          }
+
+            .logo-group .trip img{
+            width: 16vw;
+            height: 100%;
+            object-fit: cover;
+          }
+
+            .logo-group .expedia img {
+              width: 16vw;
+              height: 100%;
+              object-fit: cover;
+            }
+
+          /*Carousel starts here*/  
+
+  .frame-27 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    margin-bottom: 5.5vw;
+    margin-left: 0;
+  }
+  .frame-22 {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 27.25vw;
+    position: relative;
+  }
+  .services {
+    color: #f85e9f;
+    text-align: left;
+    font: 700 2vw/120% "Nunito Sans", sans-serif;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .our-top-value-categories-for-you {
+    color: #191825;
+    text-align: center;
+    font: 700 3vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    align-self: stretch;
+  }
+
+
+  .gallery {
+    padding: 1rem;
+    display: flex;
+    grid-template-columns: repeat(3, 21.86vw);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    overflow: hidden;
+    /* height: 90vh; */
+    scroll-snap-type: none;
+    scroll-padding: 0;
+    flex-direction: row;
+    gap: 7.2vw;
+    cursor: grab;
+  }
+
+  .gallery:active {
+    cursor: grabbing;
+  }
+
+  /* .first {
+    background: #ffffff;
+    border-radius: 2vw;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 21.86vw;
+    position: relative;
+  } */
+
+  .frame-23 {
+    background: #ffffff;
+    border-radius: 2vw;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items: center;
+    justify-content: flex-start;
+    /* align-self: stretch; */
+    flex-shrink: 0;
+    width: 23.86vw;
+    position: relative;
+  }
+
+  .destination-1 {
+    flex-shrink: 0;
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+  }
+  .frame-24 {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .best-tour-guide {
+    color: #191825;
+    text-align: center;
+    font: 700 2vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    align-self: stretch;
+  }
+  .what-looked-like-a-small-patch-of-purple-grass-above-five-feet {
+    color: rgba(25, 24, 37, 0.5);
+    text-align: center;
+    font: 400 1.5vw/160% "Inter", sans-serif;
+    position: relative;
+    align-self: stretch;
+  }
+
+  /* .second {
+    background: #ffffff;
+    border-radius: 2vw;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 21.86vw;
+    position: relative;
+  } */
+
+  .frame-242 {
+    background: #ffffff;
+    border-radius: 2vw;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 23.88vw;
+    position: relative;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+      0px 41px 89px 0px rgba(0, 0, 0, 0.1);
+  }
+  .booking-1 {
+    flex-shrink: 0;
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+  }
+  .easy-booking {
+    color: #191825;
+    text-align: center;
+    font: 700 2vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    align-self: stretch;
+  }
+  .square-was-moving-across-the-sand-in-their-direction {
+    color: rgba(25, 24, 37, 0.5);
+    text-align: center;
+    font: 400 1.5vw/160% "Inter", sans-serif;
+    position: relative;
+    align-self: stretch;
+  }
+
+  /* .third {
+    background: #ffffff;
+    border-radius: 2vw;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 21.86vw;
+    position: relative;
+  } */
+
+  .frame-25 {
+    background: #ffffff;
+    border-radius: 2vw;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 23.88vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .cloudy-1 {
+    flex-shrink: 0;
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+  }
+  .weather-forecast {
+    color: #191825;
+    text-align: center;
+    font: 700 2vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    align-self: stretch;
+  }
+    
+  .frame-23,.frame-242,.frame-25 {
+    scroll-snap-align: center;
+  }
+
+  .active {
+  scroll-snap-type: unset;
+  }
+  /*Carousel Ends here*/
+
+  /* .frame {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 0px !important;
+  } */
+
+    .frame .group {
+    display: flex;
+    position: relative;
+    width: 49.38vw;
+    height: 43.56vw;
+  }
+
+  .frame .overlap-group {
+    position: relative;
+    width: 49.37vw;
+    height: 43.56vw;
+  }
+
+  .frame .rectangle {
+    position: absolute;
+    width: 44.06vw;
+    height: 34.37vw;
+    top: 8.06vw;
+    left: 0;
+    background-color: #facd49;
+    border-radius: 0px 31.25vw 31.25vw 0px;
+  }
+
+  .frame .my-project {
+    position: absolute;
+    width: 45.56vw;
+    height: 42.56vw;
+    top: 0;
+    left: 4.81vw;
+    object-fit: cover;
+  }
+
+
+  .ticket {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 1.2vw;
+    position: relative;
+    background-color: #facd49;
+    border-radius: 100px;
+    top: -66vw;
+    left: 85vw;
+  }
+
+  .ticket-star {
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .ticket-star .vector {
+    position: relative;
+    width: 2.5vw;
+    height: 2.5vw;
+    top: 0.3vw;
+    left: 0.25vw;
+  }
+
+  .ticket-discount {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 6.25vw;
+    bottom: 77vw;
+    left: 25vw;
+    transition: all 0.3s ease;
+  }
+
+  .ticket-discount:hover {
+    scale: 1.1;
+  }
+
+  .frame .discount {
+    position: relative;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+
+  .frame .wrapper {
+    position: relative;
+    width: fit-content;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.65vw;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .frame .div-2 {
+    display: flex;
+    width: 27.81vw;
+    gap: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 61vw;
+    top: -42vw;
+  }
+
+  .frame .div-3 {
+    gap: 2vw;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .frame .div-4 {
+    gap: 1vw;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .frame .travel-point {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #f85e9f;
+    font-size: 1.65vw;
+    letter-spacing: 4.6px;
+    line-height: 1.7vw;
+  }
+
+  .frame .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 2.9vw;
+    letter-spacing: 0;
+    line-height: 3.3vw;
+  }
+
+  .frame .p {
+    position: relative;
+    align-self: stretch;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #19182580;
+    font-size: 1.4vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+  }
+
+  .frame .div-5 {
+    align-items: flex-start;
+    gap: 2vw;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+  }
+
+  .frame .div-6 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    padding: 2vw;
+    flex: 1;
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 2vw;
+    border: 1px solid;
+    border-color: #1918251a;
+    display: flex;
+    position: relative;
+  }
+
+  .frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #ff5722;
+    font-size: 2.5vw;
+    letter-spacing: 0;
+    line-height: 2.6vw;
+    white-space: nowrap;
+  }
+
+  .frame .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .frame .text-wrapper-4 {
+    position: relative;
+    width: fit-content;
+    margin-left: -0.75px;
+    margin-right: -0.75px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825;
+    font-size: 1.12vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+
+  .frame2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 79.3vw;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    padding: 8vw 4vw;
+    position: relative;
+    background-color: #facd4914;
+    border-radius: 2vw;
+    /* background-color: red; */
+    top: -47vw;
+    left: 11vw;
+  }
+
+  .frame2 .div {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+    flex: 0 0 auto;
+  }
+
+  .frame2 .subscribe-to-our {
+    position: relative;
+    width: 61.3vw;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #f85e9f;
+    font-size: 1.6vw;
+    text-align: center;
+    letter-spacing: 0.28vw;
+    line-height: 1.7vw;
+  }
+
+  .frame2 .prepare-yourself-let {
+    position: relative;
+    width: 61.3vw;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 3.46vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 4.12vw;
+  }
+
+  .frame2 .div-2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 4vw;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .frame2 .div-3 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 1vw;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 4vw;
+  }
+
+  .frame2 .message {
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .frame2 .text-wrapper {
+    position: relative;
+    width: fit-content;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825bf;
+    font-size: 1.5vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .frame2 .div-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 2vw 4vw;
+    position: relative;
+    /* align-self: stretch; */
+    flex: 0 0 auto;
+    background-color: #5d50c6;
+    border-radius: 2vw;
+    transition: all 0.1s ease;
+    box-shadow: 0 5px 0 #4e4690;
+    cursor: pointer;
+  }
+
+  .frame2 .div-wrapper:active {
+    box-shadow: 0 2px 0 #4e4690;
+    transform: translateY(3px);
+  }
+
+  .frame2 .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.7vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  /*Footer starts here*/
+  /*Footer*/
+  footer {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 9.56vw;
+    padding: 5vw 10.31vw;
+    position: relative;
+    /* background-color: red !important; */
+    top: -39vw; 
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4vw;
+    position: relative;
+  }
+
+  .footer-left-upper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    position: relative;
+  }
+
+  .footer-logo svg {
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .footer-logo .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Nunito Sans-Black", Helvetica;
+    font-weight: 900;
+    color: var(--black);
+    font-size: 1.6vw;
+    letter-spacing: 0;
+    line-height: 2.5vw;
+    white-space: nowrap;
+  }
+
+  .footer-left-text {
+    width: 17.3vw;
+    height: 16.18vw;
+  }
+
+  .footer-left-text .contrary-to-popular {
+    position: relative;
+    width: 18.38vw;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Black", Helvetica;
+    font-weight: 900;
+    color: #19182580;
+    font-size: 1.5vw;
+    letter-spacing: 0;
+    line-height: 2.3vw;
+  }
+
+  .footer-left-lower {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .footer-left-lower .group {
+    position: relative;
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+
+  .footer-right {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 12.5vw;
+    position: relative;
+  }
+
+  .footer-right-part1 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .label {
+    width: 6.31vw;
+    height: 1.8vw;
+  }
+  
+  .label .company {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.6vw;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .label .about {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.3vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .career {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.3vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .mobile {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.3vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .footer-right-part2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .label .contact {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.6vw;
+    letter-spacing: 0;
+    line-height: 1.73vw;
+    white-space: nowrap;
+  }
+
+  .label .why-travel {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .partner {    
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #191825bf;
+  font-size: 1.25vw;
+  letter-spacing: 0;
+  line-height: 1.8vw;
+  white-space: nowrap;
+  }
+
+  .label .faqs {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.43vw;
+    white-space: nowrap;
+  }
+
+  .label .blog {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.43vw;
+    white-space: nowrap;
+  }
+
+  .footer-right-part3 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .label .meet-us {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #191825;
+    font-size: 1.6vw;
+    letter-spacing: 0;
+    line-height: 1.7vw;
+    white-space: nowrap;
+  }
+
+  .label .phone {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .email {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .address .label {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5vw;
+    position: relative;
+  }
+
+  .label .address1{
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+
+  .label .address2{
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #191825bf;
+    font-size: 1.25vw;
+    letter-spacing: 0;
+    line-height: 1.8vw;
+    white-space: nowrap;
+  }
+  /*Footer ends here*/
+
+} /*Media Queries Ends here*/
+
+
+
+
+
+
+/*Media Queries for Mobile Devices*/
+@media screen and (max-width: 480px) {
+
+  nav {
+    /* background-color: lightseagreen; */
+    color: white;
+    height: 14vw;
+    border-bottom: none;
+    justify-content: space-between;
+    /* gap: -100vw; */
+    transition: none;
+}
+
+nav:hover {
+  height: initial;
+  margin-top: initial;
+  transform: none;
+  scale: none;
+}
+
+.nav-part1 svg {
+  width: 6vw;
+  max-width: 100%;
+}
+
+.nav-part1 h2 {
+    font-size: 5vw;
+}
+
+nav i {
+    display: block;
+    font-size: 5vw;
+}
+
+.nav-part2 {
+    display: none;
+}
+
+.nav-part3 {
+    display: none;
+}
+
+.dropdown-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* border: 1px solid #ccc; */
+  }
+
+  .dropdown-items.show-dropdown {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      justify-content: space-evenly;
+      align-items: flex-start;   
+      padding: 2vw;   
+      background: linear-gradient(to right, rgba(255, 228, 219, 0.895), rgba(255, 255, 255, 1 ));   
+      gap: 2vw;
+    }
+
+
+  .dropdown-items h2 {
+    color: rgba(25, 24, 37, 0.5);
+    text-align: left;
+    font: 700 3vw/120% "Nunito Sans", sans-serif;
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding: 1.5vw;
+    cursor: pointer;
+  }      
+
+  .dropdown-items #button1 {
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 2vw 3vw;
+    display: flex;
+    flex-direction: row;
+    color: #222831;
+    text-align: center;
+    justify-content: center;
+    font: 700 3vw/120% "Nunito Sans", sans-serif;
+    border: none;
+    width: 15vw;
+  }
+
+  .dropdown-items #button2{
+    background: #5d50c6;
+    border-radius: 100px;
+    padding: 2vw 3vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #eeeeee;
+    font: 700 3vw/120% "Nunito Sans", sans-serif;
+    width: 15vw;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 20.25vw;
+    /* margin-left: 4.3vw; */
+} 
+
+  .explore {
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.07),
+      0px 34px 75px 0px rgba(0, 0, 0, 0.07),
+      0px 137px 137px 0px rgba(0, 0, 0, 0.06),
+      0px 308px 185px 0px rgba(0, 0, 0, 0.04),
+      0px 548px 219px 0px rgba(0, 0, 0, 0.01),
+      0px 856px 240px 0px rgba(0, 0, 0, 0);  }
+
+  .explore-the-world {
+    color: #f85e9f;
+    text-align: left;
+    font: 700 3.6vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+  }
+
+    .explore .work-1 {
+      justify-content: center;
+      align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 3.5vw;
+    height: 3.5vw;
+  }
+        
+
+  .travel-top-destination-of-the-world {
+    text-align: center;
+    font: 700 6.3vw/100% "Nunito Sans", sans-serif;
+    position: relative;
+    /* width: 597px; */
+    width: 100%;
+  }
+  .travel-top-destination-of-the-world-span {
+    color: #000000;
+    font: 700 7.3vw/120% "Nunito Sans", sans-serif;
+  }
+  .travel-top-destination-of-the-world-span2 {
+    color: #f85e9f;
+    font: 700 7.3vw/120% "Nunito Sans", sans-serif;
+  }
+  .travel-top-destination-of-the-world-span3 {
+    color: #000000;
+    font: 700 7.3vw/120% "Nunito Sans", sans-serif;
+  }
+    
+  .we-always-make-our-customer-happy-by-providing-as-many-choices-as-possible {
+    color: rgba(25, 24, 37, 0.5);
+    text-align: center;
+    font: 400 3vw/160% "Inter", sans-serif;
+    position: relative;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .buttons #button1 {
+        background-color: #5d50c6;
+        border-radius: 100px;
+        padding: 0.8vw 2vw;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5vw;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        position: relative;
+        /* box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+          0px 5px 11px 0px rgba(0, 0, 0, 0.1), 0px 20px 20px 0px rgba(0, 0, 0, 0.09),
+          0px 45px 27px 0px rgba(0, 0, 0, 0.05), 0px 81px 32px 0px rgba(0, 0, 0, 0.01),
+          0px 126px 35px 0px rgba(0, 0, 0, 0); */
+          border: none;
+          box-shadow: 0 0.6vw 0 #4e4690;
+  }
+
+  .get-started {
+    color: #eeeeee;
+    text-align: left;
+    font: 700 3vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    padding: 1vw;
+  }
+
+
+  #button2 {
+    background: #ffffff;
+    border-radius: 100px;
+    border-style: solid;
+    border-color: #eeeeee;
+    border-width: 1px;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .play-circle-5-1 {
+    /* font-size: 1.5vw; */
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 4vw;
+    height: 4vw;
+  }
+  .watch-demo {
+    color: #222831;
+    text-align: left;
+    font: 700 3vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+    padding: 1vw;
+  }
+
+  .left {
+    align-items: center;
+    width: 100%;
+    left: 0vw;
+    gap: 5vw;
+  }
+
+  .ellipse-23 {
+    background: #ff5722;
+    border-radius: 50%;
+    opacity: 0.5;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    filter: blur(250px);
+    top: -54%;
+    left: -15%;
+  }
+  .group-1 {
+    flex-shrink: 0;
+    width: 100%;
+    position: inherit;
+    margin: 0 auto;
+    right: 0;
+    width: 45vw;
+    }
+    
+  .layer {
+    width: 100%;
+    height: 7vw;
+    position: relative;
+    overflow: visible;
+    right: 9vw;
+  }
+
+  .layer img {
+    position: absolute;
+    width: 80vw;
+    left: -10vw;
+  }      
+
+  .frame-15 {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: -1vw;
+  }
+  .frame-14 {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .rectangle-1 {
+    background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+    border-radius: 2vw;
+    flex-shrink: 0;
+    width: 32vw;
+    height: 35.75vw;
+    position: relative;
+  }
+  .rectangle-2 {
+    background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+    border-radius: 1vw;
+    flex-shrink: 0;
+    width: 32vw;
+    height: 33.75vw;
+    position: relative;
+  }
+  .rectangle-3 {
+    background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+    border-radius: 1vw;
+    flex-shrink: 0;
+    width: 33vw;
+    height: 41vw;
+    position: relative;
+  }
+  .frame-16 {
+    background: #f85e9f;
+    border-radius: 100px;
+    padding: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -14.82vw;
+    top: 34.31vw;
+    box-shadow: 0px 19px 19px 0px rgba(0, 0, 0, 0.09), 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+    overflow: hidden;
+  }
+  .send-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 3.5vw;
+    height: 3.5vw;  
+  }
+  .frame-17 {
+    background: #ff5722;
+    border-radius: 100px;
+    padding: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 30.31vw;
+    top: 66.56vw;
+    box-shadow: 0px 19px 19px 0px rgba(0, 0, 0, 0.09), 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+    overflow: hidden;
+  }
+  .add-user-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 3vw;
+    height: 3vw;
+  }
+  .frame-18 {
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 2vw 4vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 51.68vw;
+    top: 50.5vw;
+    box-shadow: 0px 43px 26px 0px rgba(0, 0, 0, 0.05), 0px 77px 31px 0px rgba(0, 0, 0, 0.01), 0px 120px 34px 0px rgba(0, 0, 0, 0);
+    overflow: hidden;
+  }
+  .location-1 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 3vw;
+    height: 3vw;
+  }
+  .top-places {
+    color: #393e46;
+    text-align: left;
+    font: 700 1.8vw/120% "Nunito Sans", sans-serif;
+    position: relative;
+  }  
+
+  .objects {
+    display: none;
+  }
+
+  .logo-group {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    /* background-color: red; */
+    padding: 0.31vw 2vw;
+    gap: 5vw;
+    margin-top: 7vw;
+    margin-bottom: 7vw;
+    align-content: center;
+    justify-items: center;
+  }
+  
+  .logo {
+    flex-shrink: 2;
+    width: 18vw;
+    height: 6.25vw;
+    /* margin: 0 10px; */
+    overflow: visible;
+  }
+
+  .logo img{
+    width: 20.25vw;
+    height: 7.25vw;
+    object-fit: contain;
+  }
+
+  .logo-group .trip img{
+    width: 21vw;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .logo-group .expedia img {
+    width: 21vw;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /*Carousel starts here*/  
+
+.frame-27 {
+display: flex;
+flex-direction: column;
+gap: 0px;
+align-items: center;
+justify-content: center;
+position: relative;
+left: 0;
+margin-bottom: 5.5vw;
+margin-left: 0;
+}
+.frame-22 {
+display: flex;
+flex-direction: column;
+gap: 1vw;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+width: 45.25vw;
+position: relative;
+}
+.services {
+color: #f85e9f;
+text-align: left;
+font: 700 4.5vw/120% "Nunito Sans", sans-serif;
+text-transform: uppercase;
+position: relative;
+}
+.our-top-value-categories-for-you {
+color: #191825;
+text-align: center;
+font: 700 5.2vw/120% "Nunito Sans", sans-serif;
+position: relative;
+align-self: stretch;
+}
+
+
+.gallery {
+    position: relative;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* grid-gap: 1rem; */
+    grid-auto-flow: row;
+    /* grid-template-rows: 1fr; */
+    /* grid-column-gap: 0; */
+    /* grid-row-gap: 0; */
+    overflow: hidden;
+    /* height: 90vh; */
+    scroll-snap-type: none;
+    scroll-padding: 0;
+    flex-direction: row;
+    gap: 10vw;
+    margin: 7vw 0vw
+vw
+;
+}
+
+.gallery:active {
+cursor: grabbing;
+}
+
+/* .first {
+background: #ffffff;
+border-radius: 2vw;
+padding: 4vw;
+display: flex;
+flex-direction: column;
+gap: 4vw;
+align-items: center;
+justify-content: flex-start;
+align-self: stretch;
+flex-shrink: 0;
+width: 21.86vw;
+position: relative;
+} */
+
+.frame-23 {
+background: #ffffff;
+border-radius: 2vw;
+padding: 6vw;
+display: flex;
+flex-direction: column;
+gap: 4vw;
+align-items: center;
+justify-content: flex-start;
+/* align-self: stretch; */
+flex-shrink: 0;
+width: 42.86vw;
+position: relative;
+}
+
+.destination-1 {
+flex-shrink: 0;
+width: 7.5vw;
+height: 7.5vw;
+position: relative;
+}
+.frame-24 {
+display: flex;
+flex-direction: column;
+gap: 2vw;
+align-items: center;
+justify-content: flex-start;
+align-self: stretch;
+flex-shrink: 0;
+position: relative;
+}
+.best-tour-guide {
+color: #191825;
+text-align: center;
+font: 700 4.5vw/120% "Nunito Sans", sans-serif;
+position: relative;
+align-self: stretch;
+}
+.what-looked-like-a-small-patch-of-purple-grass-above-five-feet {
+color: rgba(25, 24, 37, 0.5);
+text-align: center;
+font: 400 3.2vw/160% "Inter", sans-serif;
+position: relative;
+align-self: stretch;
+}
+
+/* .second {
+background: #ffffff;
+border-radius: 2vw;
+padding: 4vw;
+display: flex;
+flex-direction: column;
+gap: 4vw;
+align-items: center;
+justify-content: flex-start;
+align-self: stretch;
+flex-shrink: 0;
+width: 21.86vw;
+position: relative;
+} */
+
+.frame-242 {
+background: #ffffff;
+border-radius: 2vw;
+padding: 6vw;
+display: flex;
+flex-direction: column;
+gap: 4vw;
+align-items: center;
+justify-content: flex-start;
+align-self: stretch;
+flex-shrink: 0;
+width: 42.86vw;
+position: relative;
+box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 89px 0px rgba(0, 0, 0, 0.1);
+}
+.booking-1 {
+flex-shrink: 0;
+width: 7.5vw;
+height: 7.5vw;
+position: relative;
+}
+.easy-booking {
+color: #191825;
+text-align: center;
+font: 700 4.5vw/120% "Nunito Sans", sans-serif;
+position: relative;
+align-self: stretch;
+}
+.square-was-moving-across-the-sand-in-their-direction {
+color: rgba(25, 24, 37, 0.5);
+text-align: center;
+font: 400 3.2vw/160% "Inter", sans-serif;
+position: relative;
+align-self: stretch;
+}
+
+/* .third {
+background: #ffffff;
+border-radius: 2vw;
+padding: 4vw;
+display: flex;
+flex-direction: column;
+gap: 4vw;
+align-items: center;
+justify-content: flex-start;
+align-self: stretch;
+flex-shrink: 0;
+width: 21.86vw;
+position: relative;
+} */
+
+.frame-25 {
+background: #ffffff;
+border-radius: 2vw;
+padding: 6vw;
+display: flex;
+flex-direction: column;
+gap: 4vw;
+align-items: center;
+justify-content: flex-start;
+align-self: stretch;
+flex-shrink: 0;
+width: 42.88vw;
+position: relative;
+overflow: hidden;
+}
+.cloudy-1 {
+flex-shrink: 0;
+width: 7.5vw;
+height: 7.5vw;
+position: relative;
+}
+.weather-forecast {
+color: #191825;
+text-align: center;
+font: 700 4.5vw/120% "Nunito Sans", sans-serif;
+position: relative;
+align-self: stretch;
+}
+
+.frame-23,.frame-242,.frame-25 {
+scroll-snap-align: center;
+}
+
+.active {
+scroll-snap-type: unset;
+}
+/*Carousel Ends here*/
+
+/* .frame {
+display: flex !important;
+justify-content: center !important;
+margin-bottom: 0px !important;
+} */
+
+.frame .group {
+display: flex;
+position: relative;
+width: 49.38vw;
+height: 43.56vw;
+}
+
+.frame .overlap-group {
+position: relative;
+width: 49.37vw;
+height: 43.56vw;
+}
+
+.frame .rectangle {
+position: absolute;
+width: 49.06vw;
+height: 39.37vw;
+top: 8.06vw;
+left: 0;
+background-color: #facd49;
+border-radius: 0px 31.25vw 31.25vw 0px;
+}
+
+.frame .my-project {
+position: absolute;
+width: 49.56vw;
+height: 48.56vw;
+top: 0;
+left: 0vw;
+object-fit: cover;
+}
+
+
+.ticket {
+display: inline-flex;
+align-items: center;
+gap: 1vw;
+padding: 1.2vw;
+position: relative;
+background-color: #facd49;
+border-radius: 100px;
+top: -69vw;
+left: 92vw;
+}
+
+.ticket-star {
+position: relative;
+width: 3vw;
+height: 3vw;
+}
+
+.ticket-star .vector {
+position: relative;
+width: 2.5vw;
+height: 2.5vw;
+top: -0.6vw;
+left: 0.25vw;
+}
+
+.ticket-discount {
+display: inline-flex;
+align-items: center;
+gap: 1vw;
+padding: 0.5vw 1vw;
+position: relative;
+background-color: #ffffff;
+border-radius: 6.25vw;
+bottom: 73vw;
+left: 25vw;
+transition: all 0.3s ease;
+}
+
+.ticket-discount:hover {
+scale: 1.1;
+}
+
+.frame .discount {
+position: relative;
+width: 3.5vw;
+height: 3.5vw;
+}
+
+.frame .wrapper {
+position: relative;
+width: fit-content;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #191825;
+font-size: 2vw;
+letter-spacing: 0;
+/* line-height: 1.7vw; */
+white-space: nowrap;
+}
+
+.frame .div-2 {
+display: flex;
+    width: 37.81vw;
+    gap: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 56vw;
+    top: -45vw;
+}
+
+.frame .div-3 {
+gap: 1.5vw;
+align-self: stretch;
+width: 100%;
+flex: 0 0 auto;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+position: relative;
+}
+
+.frame .div-4 {
+gap: 3vw;
+align-self: stretch;
+width: 100%;
+flex: 0 0 auto;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+position: relative;
+}
+
+.frame .travel-point {
+position: relative;
+align-self: stretch;
+margin-top: -1px;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #f85e9f;
+font-size: 2.5vw;
+letter-spacing: 4.6px;
+line-height: 1.7vw;
+}
+
+.frame .text-wrapper {
+position: relative;
+align-self: stretch;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #191825;
+font-size: 3.4vw;
+letter-spacing: 0;
+line-height: 4.5vw;
+}
+
+.frame .p {
+position: relative;
+align-self: stretch;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #19182580;
+font-size: 2vw;
+letter-spacing: 0;
+line-height: 2.5vw;
+}
+
+.frame .div-5 {
+align-items: flex-start;
+gap: 2vw;
+align-self: stretch;
+width: 100%;
+flex: 0 0 auto;
+display: flex;
+position: relative;
+}
+
+.frame .div-6 {
+flex-direction: column;
+align-items: center;
+gap: 1vw;
+padding: 2vw;
+flex: 1;
+flex-grow: 1;
+background-color: #ffffff;
+border-radius: 2vw;
+border: 1px solid;
+border-color: #1918251a;
+display: flex;
+position: relative;
+}
+
+.frame .text-wrapper-2 {
+position: relative;
+width: fit-content;
+margin-top: -1px;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #ff5722;
+font-size: 3vw;
+letter-spacing: 0;
+line-height: 2.6vw;
+white-space: nowrap;
+}
+
+.frame .text-wrapper-3 {
+position: relative;
+width: fit-content;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825;
+font-size: 1.7vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.frame .text-wrapper-4 {
+position: relative;
+width: fit-content;
+margin-left: -0.75px;
+margin-right: -0.75px;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825;
+font-size: 1.12vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+  .graphic_element {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 12vh;
+    width: 12vw;
+    /* background-color: black; */
+    bottom: 40vw;
+    left: 3vw;
+  }
+
+  .graphic_element img {
+    width: 13vw;
+    height: 13vw;
+    /* object-fit: cover; */
+    position: absolute;
+  }
+
+
+
+.frame2 {
+position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 86.3vw;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    padding: 6vw 4vw;
+    position: relative;
+    background-color: #facd4914;
+    border-radius: 2vw;
+    /* background-color: red; */
+    top: -55vw;
+    left: 7vw;
+}
+
+.frame2 .div {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 3vw;
+position: relative;
+flex: 0 0 auto;
+}
+
+.frame2 .subscribe-to-our {
+position: relative;
+width: 61.3vw;
+margin-top: -1px;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #f85e9f;
+font-size: 3vw;
+text-align: center;
+letter-spacing: 0.28vw;
+line-height: 1.7vw;
+}
+
+.frame2 .prepare-yourself-let {
+position: relative;
+width: 52.3vw;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #191825;
+font-size: 4.2vw;
+text-align: center;
+letter-spacing: 0;
+line-height: 4.12vw;
+}
+
+.frame2 .div-2 {
+display:contents;
+align-items: flex-start;
+gap: 4vw;
+position: relative;
+align-self: stretch;
+width: 100%;
+flex: 0 0 auto;
+}
+
+.frame2 .div-3 {
+display: flex;
+align-items: center;
+gap: 1vw;
+padding: 2vw;
+position: relative;
+flex: 1;
+align-self: stretch;
+flex-grow: 1;
+background-color: #ffffff;
+border-radius: 4vw;
+}
+
+.frame2 .message {
+position: relative;
+width: 5vw;
+height: 5vw;
+}
+
+.frame2 .text-wrapper {
+position: relative;
+width: fit-content;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #191825bf;
+font-size: 3.2vw;
+text-align: center;
+letter-spacing: 0;
+line-height: 1.7vw;
+white-space: nowrap;
+}
+
+.frame2 .div-wrapper {
+display: inline-flex;
+align-items: center;
+gap: 1vw;
+padding: 2vw 4vw;
+position: relative;
+/* align-self: stretch; */
+flex: 0 0 auto;
+background-color: #5d50c6;
+border-radius: 2vw;
+transition: all 0.1s ease;
+box-shadow: 0 0.5vw 0 #4e4690;
+cursor: pointer;
+}
+
+.frame2 .div-wrapper:active {
+box-shadow: 0 2px 0 #4e4690;
+transform: translateY(3px);
+}
+
+.frame2 .text-wrapper-2 {
+position: relative;
+width: fit-content;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #ffffff;
+font-size: 3vw;
+text-align: center;
+letter-spacing: 0;
+line-height: 1.7vw;
+white-space: nowrap;
+}
+
+/*Footer starts here*/
+/*Footer*/
+footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-flow: row;
+    width: 100%;
+    align-items: flex-start;
+    gap: 5.56vw;
+    padding: 5vw 4.31vw;
+    position: relative;
+    /* background-color: red !important; */
+    top: -39vw;
+}
+
+.footer-left {
+display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* grid-gap: 1rem; */
+    grid-auto-flow: column;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4vw;
+    position: relative;
+}
+
+.footer-left-upper {
+display: inline-flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 2vw;
+position: relative;
+}
+
+.footer-logo {
+display: inline-flex;
+align-items: center;
+gap: 1vw;
+position: relative;
+}
+
+.footer-logo svg {
+position: relative;
+width: 4.5vw;
+height: 4.5vw;
+}
+
+.footer-logo .text-wrapper {
+position: relative;
+width: fit-content;
+margin-top: -1px;
+font-family: "Nunito Sans-Black", Helvetica;
+font-weight: 900;
+color: var(--black);
+font-size: 3.2vw;
+letter-spacing: 0;
+line-height: 2.5vw;
+white-space: nowrap;
+}
+
+.footer-left-text {
+width: 17.3vw;
+height: 16.18vw;
+}
+
+.footer-left-text .contrary-to-popular {
+position: relative;
+width: 45.38vw;
+top: 0;
+left: 0;
+font-family: "Nunito Sans-Black", Helvetica;
+font-weight: 900;
+color: #19182580;
+font-size: 2.5vw;
+letter-spacing: 0;
+line-height: 3.5vw;
+text-align: start;
+}
+
+.footer-left-lower {
+display: inline-flex;
+align-items: flex-start;
+gap: 2vw;
+position: relative;
+}
+
+.footer-left-lower .group {
+position: relative;
+width: 5vw;
+height: 5vw;
+}
+
+.footer-right {
+display: grid;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 4.5vw;
+position: relative;
+}
+
+.footer-right-part1 {
+display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11.5vw, 1fr));
+    /* grid-gap: 1rem; */
+    grid-auto-flow: column;
+flex-direction: column;
+align-items: flex-start;
+gap: 10vw;
+position: relative;
+}
+
+.label {
+width: 6.31vw;
+height: 1.8vw;
+}
+
+.label .company {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #191825;
+font-size: 2.6vw;
+letter-spacing: 0;
+line-height: 1.7vw;
+white-space: nowrap;
+}
+
+.label .about {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.label .career {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.label .mobile {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.footer-right-part2 {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(12vw, 1fr));
+/* grid-gap: 1rem; */
+grid-auto-flow: column;
+flex-direction: column;
+align-items: flex-start;
+gap: 10vw;
+position: relative;
+}
+
+.label .contact {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #191825;
+font-size: 2.6vw;
+letter-spacing: 0;
+line-height: 1.73vw;
+white-space: nowrap;
+}
+
+.label .why-travel {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.label .partner {    
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.label .faqs {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.43vw;
+white-space: nowrap;
+}
+
+.label .blog {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.43vw;
+white-space: nowrap;
+}
+
+.footer-right-part3 {
+display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11.5vw, 1fr));
+    /* grid-gap: 1rem; */
+    grid-auto-flow: column;
+flex-direction: column;
+align-items: flex-start;
+gap: 10vw;
+position: relative;
+}
+
+.label .meet-us {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Nunito Sans-Bold", Helvetica;
+font-weight: 700;
+color: #191825;
+font-size: 2.6vw;
+letter-spacing: 0;
+line-height: 1.7vw;
+white-space: nowrap;
+}
+
+.label .phone {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.label .email {
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.3vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+
+.address .label {
+display: inline-flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 1.5vw;
+position: relative;
+}
+
+.label .address1{
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.2vw;
+letter-spacing: 0;
+line-height: 2.8vw;
+white-space: nowrap;
+}
+
+.label .address2{
+position: relative;
+top: 0;
+left: 0;
+font-family: "Inter-Regular", Helvetica;
+font-weight: 400;
+color: #191825bf;
+font-size: 2.2vw;
+letter-spacing: 0;
+line-height: 1.8vw;
+white-space: nowrap;
+}
+/*Footer ends here*/
+
+
+}/*Media Quesries for Mobile Devices ends here*/
